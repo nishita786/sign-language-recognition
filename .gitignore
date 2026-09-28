@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual environments
+.venv/
+.live_env/
+.mediapipe_env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Raw dataset and generated processed data
+dataset/raw/
+dataset/processed/
+dataset/landmarks/
+dataset/landmarks_normalized/
+dataset/landmarks_motion/
+
+# OS files
+.DS_Store
+
+# Environment/secrets
+.env
+.env.*
+!.env.example
+
+# Large model/checkpoint files
+*.h5
+*.ckpt
+*.keras
+
+# Temporary files
+*.log
