@@ -33,3 +33,5 @@ dataset/landmarks_motion/
 
 # Temporary files
 *.log
+dataset/
+models/
