@@ -1,0 +1,10 @@
+tensorflow>=2.19
+keras>=3.15
+numpy>=1.26,<2.1
+opencv-python>=4.10
+mediapipe>=0.10.21
+scikit-learn>=1.5
+matplotlib>=3.8
+pandas>=2.2
+tqdm>=4.66
+gradio>=4.44
