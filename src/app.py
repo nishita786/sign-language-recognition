@@ -130,7 +130,7 @@ with gr.Blocks(title="ASL Words") as demo:
     gr.Markdown(
         "Hold a letter still. It is added to the word as soon as it appears. "
         "Lower your hand before a repeated letter, such as the second L in BALL. "
-        "Letters: **A, B, C, D, F, I, L, V, W, Y**."
+        "Every letter **A** through **Z** can be added."
     )
     state = gr.State(new_state())
     with gr.Row():

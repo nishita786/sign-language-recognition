@@ -34,9 +34,7 @@ MODEL_PATH = ROOT / "models" / "asl_letters.keras"
 CLASS_PATH = ROOT / "models" / "asl_letters_classes.json"
 REPORT_PATH = ROOT / "results" / "asl_letters_report.txt"
 
-# Shapes that stay apart on a webcam: fist, flat hand, C, pointing D,
-# OK sign, pinky, L, two fingers, three fingers, thumb-and-pinky.
-LETTERS = ["A", "B", "C", "D", "F", "I", "L", "V", "W", "Y"]
+LETTERS = [chr(code) for code in range(ord("A"), ord("Z") + 1)]
 PER_CLASS = 200
 SEED = 7
 
@@ -129,9 +127,9 @@ def build_model():
     model = tf.keras.Sequential(
         [
             tf.keras.layers.Input(shape=(63,)),
-            tf.keras.layers.Dense(128, activation="relu"),
+            tf.keras.layers.Dense(256, activation="relu"),
             tf.keras.layers.Dropout(0.3),
-            tf.keras.layers.Dense(64, activation="relu"),
+            tf.keras.layers.Dense(128, activation="relu"),
             tf.keras.layers.Dropout(0.2),
             tf.keras.layers.Dense(len(LETTERS), activation="softmax"),
         ]

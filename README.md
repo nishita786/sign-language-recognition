@@ -1,8 +1,8 @@
 # ASL Alphabet Recognition
 
-Real-time recognition of ten American Sign Language letters from the webcam. The site uses a small slice of the [Kaggle ASL Alphabet](https://www.kaggle.com/datasets/grassknoted/asl-alphabet) photos: **A, B, C, D, F, I, L, V, W, Y**. Those letters have distinct hand shapes, so a landmark model stays accurate.
+Real-time recognition of the full American Sign Language alphabet, **A** through **Z**, from the webcam. The site uses a small slice of the [Kaggle ASL Alphabet](https://www.kaggle.com/datasets/grassknoted/asl-alphabet) photos: 200 images of each letter. Each photo is turned into hand landmarks so the shape transfers to a webcam.
 
-Each photo is turned into 21 MediaPipe hand landmarks, centered on the wrist and scaled by the palm. On the held-out photos the model reaches **99.4% accuracy**.
+Each photo is turned into 21 MediaPipe hand landmarks, centered on the wrist and scaled by the palm. On the held-out photos the model reaches **98.3% accuracy**.
 
 ## Run the website
 
@@ -13,25 +13,11 @@ source .live_env/bin/activate
 python src/app.py
 ```
 
-Open http://127.0.0.1:7860 and allow the camera. Hold one of the ten letters still until it appears, then lower your hand. That letter is added to the word on screen and printed in the terminal. **Clear word** starts over.
+Open http://127.0.0.1:7860 and allow the camera. Hold any letter from A to Z still until it appears. It is added to the word on screen and printed in the terminal. Lower your hand before a repeated letter. **Clear word** starts over.
 
 ## Results
 
-| Letter | Held-out photos |
-| --- | ---: |
-| A | 29/29 |
-| B | 30/30 |
-| C | 30/30 |
-| D | 35/35 |
-| F | 39/39 |
-| I | 32/33 |
-| L | 34/34 |
-| V | 35/35 |
-| W | 33/34 |
-| Y | 34/34 |
-| **Overall** | **99.4%** |
-
-The full report is `results/asl_letters_report.txt`.
+Every letter from A to Z is included. Held-out accuracy is **98.3%** (812 of 826 photos). The per-letter counts are in `results/asl_letters_report.txt`.
 
 ## Data
 
@@ -39,7 +25,7 @@ The full report is `results/asl_letters_report.txt`.
 
 ## Reproduce training
 
-The ten-letter subset is already in `dataset/asl_letters/`. To rebuild it from the full Kaggle download, place that download under `dataset/kaggle` and run:
+The A–Z subset is already in `dataset/asl_letters/`. To rebuild it from the full Kaggle download, place that download under `dataset/kaggle` and run:
 
 ```bash
 export PYTHONPATH=src
